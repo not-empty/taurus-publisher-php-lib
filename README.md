@@ -3,6 +3,7 @@
 [![Latest Version](https://img.shields.io/github/v/release/kiwfy/taurus-publisher-php.svg?style=flat-square)](https://github.com/kiwfy/taurus-publisher-php/releases)
 [![Build Status](https://img.shields.io/github/workflow/status/kiwfy/taurus-publisher-php/CI?label=ci%20build&style=flat-square)](https://github.com/kiwfy/taurus-publisher-php/actions?query=workflow%3ACI)
 [![Total Downloads](https://img.shields.io/packagist/dt/kiwfy/taurus-publisher-php.svg?style=flat-square)](https://packagist.org/packages/kiwfy/taurus-publisher-php)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 PHP library using LUA script to send for redis a job for Taurus queue
 
