@@ -43,12 +43,12 @@ To ensure that the entire project is fine:
 
 First install all the dev dependences
 ```sh
-$ composer install --dev --prefer-dist
+composer install --dev --prefer-dist
 ```
 
 Second run all validations
 ```sh
-$ composer check
+composer check
 ```
 
 **Kiwfy - Open your code, open your mind!**
