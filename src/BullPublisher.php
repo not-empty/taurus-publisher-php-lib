@@ -9,16 +9,20 @@ class BullPublisher
 {
     private $prefix = 'bull';
     private $redisConfig;
+    private $redisOptions;
 
     /**
      * construct class with redis config if pass
-     * @param string $redisConfig
+     * @param array $redisConfig
+     * @param array $redisConfig
      * @return void
      */
     public function __construct(
-        array $redisConfig = []
+        array $redisConfig = [],
+        array $redisOptions = []
     ) {
         $this->redisConfig = $this->redisConfig($redisConfig);
+        $this->redisOptions = $redisOptions;
     }
 
     /**
@@ -147,6 +151,6 @@ class BullPublisher
      */
     public function newRedis(): Redis
     {
-        return new Redis($this->redisConfig);
+        return new Redis($this->redisConfig, $this->redisOptions);
     }
 }
