@@ -32,6 +32,26 @@ and run
 php sample/publisher-sample.php
 ```
 
+### Configuration throw contruct class
+
+If you want pass different configure use construct class for that.
+
+```php
+$defaultConfig = [
+    'scheme' => 'tcp',
+    'host' => 'localhost',
+    'port' => 6379,
+];
+
+$redisOptions = [
+	'parameters' => [
+		'password' => '123456',
+	],
+];
+
+$bullPublisher = new BullPublisher($defaultConfig, $redisOptions);
+```
+
 ### Development
 
 Want to contribute? Great!
