@@ -1,7 +1,7 @@
 {
     "name": "kiwfy/taurus-publisher-php",
     "description": "PHP library using LUA script to send for redis a job for Taurus queue",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "type": "library",
     "license": "GPL-3.0-only",
     "require": {
@@ -31,6 +31,7 @@
             "bash contrib/setup.sh"
         ],
         "check": [
+            "@composervalid",
             "@lint",
             "@cs",
             "@mess",
@@ -48,6 +49,7 @@
         ],
         "cs": "vendor/bin/phpcs",
         "test": "phpdbg -qrr vendor/bin/phpunit --configuration phpunit.xml -d memory_limit=1024M",
-        "ccu" : "php contrib/coverage-checker.php coverage/clover.xml 100"
+        "ccu" : "php contrib/coverage-checker.php coverage/clover.xml 100",
+        "composervalid": "composer valid"
     }
 }
