@@ -31,7 +31,6 @@
             "bash contrib/setup.sh"
         ],
         "check": [
-            "@composervalid",
             "@lint",
             "@cs",
             "@mess",
@@ -49,7 +48,6 @@
         ],
         "cs": "vendor/bin/phpcs",
         "test": "phpdbg -qrr vendor/bin/phpunit --configuration phpunit.xml -d memory_limit=1024M",
-        "ccu" : "php contrib/coverage-checker.php coverage/clover.xml 100",
-        "composervalid": "composer valid"
+        "ccu" : "php contrib/coverage-checker.php coverage/clover.xml 100"
     }
 }
