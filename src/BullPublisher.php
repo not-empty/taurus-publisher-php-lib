@@ -131,7 +131,7 @@ class BullPublisher
      */
     public function getTimestamp(): int
     {
-        return intval(str_replace('.', '', microtime(true)));
+        return time();
     }
 
     /**
