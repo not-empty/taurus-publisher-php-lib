@@ -131,7 +131,7 @@ class BullPublisher
      */
     public function getTimestamp(): int
     {
-        return time();
+        return round(microtime(true) * 1000);
     }
 
     /**
