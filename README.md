@@ -44,9 +44,9 @@ $defaultConfig = [
 ];
 
 $redisOptions = [
-	'parameters' => [
-		'password' => '123456',
-	],
+    'parameters' => [
+        'password' => '123456',
+    ],
 ];
 
 $bullPublisher = new BullPublisher($defaultConfig, $redisOptions);
