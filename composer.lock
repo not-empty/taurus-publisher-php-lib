@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d455cb45a87b02f0327a0aca1c7c215d",
+    "content-hash": "5cf5395ef9c5e42ad2b67dee730735ce",
     "packages": [
         {
             "name": "kiwfy/ulid-php",
