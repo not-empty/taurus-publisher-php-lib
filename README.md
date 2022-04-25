@@ -10,7 +10,9 @@ PHP library using LUA script to send for redis a job for Taurus queue
 
 ### Installation
 
-Requires [PHP](https://php.net) 7.1.
+[Release 2.0.0](https://github.com/kiwfy/taurus-publisher-php/releases/tag/2.0.0) Requires [PHP](https://php.net) 8.1
+
+[Release 1.1.6](https://github.com/kiwfy/taurus-publisher-php/releases/tag/1.1.6) or earlier Requires [PHP](https://php.net) 7.1
 
 The recommended way to install is through [Composer](https://getcomposer.org/).
 
@@ -22,7 +24,18 @@ composer require kiwfy/taurus-publisher-php
 
 it's a good idea to look in the sample folder to understand how it works.
 
-First verify if all dependencies is installed (if need anyelse)
+First you need to building a correct environment to install dependences
+
+```sh
+docker build -t kiwfy/taurus-publisher-php -f contrib/Dockerfile .
+```
+
+Access the container
+```sh
+docker run -v ${PWD}/:/var/www/html -it kiwfy/taurus-publisher-php bash
+```
+
+Verify if all dependencies is installed (if need anyelse)
 ```sh
 composer install --no-dev --prefer-dist
 ```
@@ -62,12 +75,22 @@ Make a change in your file and be careful with your updates!
 
 To ensure that the entire project is fine:
 
-First install all the dev dependences
+First you need to building a correct environment to install/update all dependences
+```sh
+docker build -t kiwfy/taurus-publisher-php -f contrib/Dockerfile .
+```
+
+Access the container
+```sh
+docker run -v ${PWD}/:/var/www/html -it kiwfy/taurus-publisher-php bash
+```
+
+Install all dependences
 ```sh
 composer install --dev --prefer-dist
 ```
 
-Second run all validations
+Run all validations
 ```sh
 composer check
 ```
