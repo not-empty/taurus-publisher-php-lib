@@ -229,7 +229,7 @@ class BullPublisherTest extends TestCase
             ->getMock();
 
         $bullPublisher = Mockery::mock(BullPublisher::class)->makePartial();
-        $bullPublisher->shouldReceive('newRedis')
+        $bullPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -331,7 +331,7 @@ class BullPublisherTest extends TestCase
             ->getMock();
 
         $bullPublisher = Mockery::mock(BullPublisher::class)->makePartial();
-        $bullPublisher->shouldReceive('newRedis')
+        $bullPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -433,7 +433,7 @@ class BullPublisherTest extends TestCase
             ->getMock();
 
         $bullPublisher = Mockery::mock(BullPublisher::class)->makePartial();
-        $bullPublisher->shouldReceive('newRedis')
+        $bullPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -535,7 +535,7 @@ class BullPublisherTest extends TestCase
             ->getMock();
 
         $bullPublisher = Mockery::mock(BullPublisher::class)->makePartial();
-        $bullPublisher->shouldReceive('newRedis')
+        $bullPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -551,6 +551,68 @@ class BullPublisherTest extends TestCase
         $add = $bullPublisher->add($queue, $data, $opts, $name);
 
         $this->assertEquals('', $add);
+    }
+
+    /**
+     * @covers \BullPublisher\BullPublisher::getRedis
+     */
+    public function testGetRedis()
+    {
+        $redisConfig = [];
+
+        $redisMock = Mockery::spy(Redis::class);
+
+        $bullPublisher = Mockery::mock(
+            BullPublisher::class,
+            [
+                $redisConfig,
+            ]
+        )->makePartial();
+
+        $bullPublisher
+            ->shouldReceive('redisConfig')
+            ->with($redisConfig)
+            ->once()
+            ->andReturn($redisConfig)
+            ->shouldReceive('newRedis')
+            ->withNoArgs()
+            ->once()
+            ->andReturn($redisMock);
+
+        $getRedis = $bullPublisher->getRedis();
+
+        $this->assertEquals($getRedis, $redisMock);
+    }
+
+    /**
+     * @covers \BullPublisher\BullPublisher::getRedis
+     */
+    public function testGetRedisWithConnectionCreated()
+    {
+        $redisConfig = [];
+
+        $redisMock = Mockery::spy(Redis::class);
+
+        $bullPublisher = Mockery::mock(
+            BullPublisher::class,
+            [
+                $redisConfig,
+                [],
+                $redisMock
+            ]
+        )->makePartial();
+
+        $bullPublisher
+            ->shouldReceive('redisConfig')
+            ->never()
+            ->andReturn($redisConfig)
+            ->shouldReceive('newRedis')
+            ->never()
+            ->andReturn($redisMock);
+
+        $getRedis = $bullPublisher->getRedis();
+
+        $this->assertEquals($getRedis, $redisMock);
     }
 
     protected function tearDown(): void

@@ -10,6 +10,7 @@ class BullPublisher
     private $prefix = 'bull';
     private $redisConfig;
     private $redisOptions;
+    private $redis;
 
     /**
      * construct class with redis config if pass
@@ -19,10 +20,12 @@ class BullPublisher
      */
     public function __construct(
         array $redisConfig = [],
-        array $redisOptions = []
+        array $redisOptions = [],
+        Redis $redis = null
     ) {
-        $this->redisConfig = $this->redisConfig($redisConfig);
+        $this->redisConfig = $redisConfig;
         $this->redisOptions = $redisOptions;
+        $this->redis = $redis;
     }
 
     /**
@@ -40,7 +43,7 @@ class BullPublisher
         array $opts = [],
         string $name = 'process'
     ): string {
-        $redis = $this->newRedis();
+        $redis = $this->getRedis();
 
         $redis
             ->getProfile()
@@ -122,6 +125,20 @@ class BullPublisher
         ];
 
         return array_merge($defaultConfig, $redisConfig);
+    }
+
+    /**
+     * create predis client instance
+     * @return \Predis\Client
+     */
+    public function getRedis(): Redis
+    {
+        if ($this->redis instanceof Redis) {
+            return $this->redis;
+        }
+
+        $this->redisConfig = $this->redisConfig($this->redisConfig);
+        return $this->newRedis();
     }
 
     /**
