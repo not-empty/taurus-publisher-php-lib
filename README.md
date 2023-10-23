@@ -3,7 +3,7 @@
 [![Latest Version](https://img.shields.io/github/v/release/not-empty/taurus-publisher-php-lib.svg?style=flat-square)](https://github.com/not-empty/taurus-publisher-php-lib/releases)
 [![codecov](https://codecov.io/gh/not-empty/taurus-publisher-php-lib/graph/badge.svg?token=AEMV163UW6)](https://codecov.io/gh/not-empty/taurus-publisher-php-lib)
 [![CI Build](https://img.shields.io/github/actions/workflow/status/not-empty/taurus-publisher-php-lib/php.yml)](https://github.com/not-empty/taurus-publisher-php-lib/actions/workflows/php.yml)
-[![Downloads Old](https://img.shields.io/packagist/dt/kiwfy/ulid-php?logo=old&label=downloads%20legacy)](https://packagist.org/packages/kiwfy/ulid-php)
+[![Downloads Old](https://img.shields.io/packagist/dt/kiwfy/taurus-publisher-php?logo=old&label=downloads%20legacy)](https://packagist.org/packages/kiwfy/taurus-publisher-php)
 [![Downloads](https://img.shields.io/packagist/dt/not-empty/taurus-publisher-php-lib?logo=old&label=downloads)](https://packagist.org/packages/not-empty/taurus-publisher-php-lib)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Packagist License (custom server)](https://img.shields.io/packagist/l/not-empty/taurus-publisher-php-lib)](https://github.com/not-empty/taurus-publisher-php-lib/blob/master/LICENSE)
