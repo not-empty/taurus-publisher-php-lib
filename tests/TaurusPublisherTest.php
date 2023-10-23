@@ -226,7 +226,7 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('close')
+            ->shouldReceive('disconnect')
             ->withNoArgs()
             ->andReturn(true)
             ->getMock();
@@ -331,7 +331,7 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('close')
+            ->shouldReceive('disconnect')
             ->withNoArgs()
             ->andReturn(true)
             ->getMock();
@@ -436,7 +436,7 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('close')
+            ->shouldReceive('disconnect')
             ->withNoArgs()
             ->andReturn(true)
             ->getMock();
@@ -541,7 +541,7 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('close')
+            ->shouldReceive('disconnect')
             ->withNoArgs()
             ->andReturn(true)
             ->getMock();

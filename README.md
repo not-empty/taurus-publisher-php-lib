@@ -20,7 +20,6 @@ Publishing
 
 ```php
 use TaurusPublisher\TaurusPublisher;
-
 $queue = 'test';
 $data = [
 	'publisher' => 'example',
@@ -37,7 +36,6 @@ Publishing with redis config
 
 ```php
 use TaurusPublisher\TaurusPublisher;
-
 $queue = 'test';
 $data = [
 	'publisher' => 'example',
@@ -52,7 +50,6 @@ $result = $taurus->add(
     $queue,
     $data
 );
-
 var_dump($result);
 ```
 
@@ -60,12 +57,10 @@ Publishing with queue config
 
 ```php
 use TaurusPublisher\TaurusPublisher;
-
 $queue = 'test';
 $data = [
 	'publisher' => 'example',
 ];
-
 $taurus = new TaurusPublisher();
 $queueConfig = [
     'attempts' => 4,
@@ -78,7 +73,6 @@ $result = $taurus->add(
     $data,
     $queueConfig
 );
-
 var_dump($result);
 ```
 

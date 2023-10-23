@@ -85,7 +85,7 @@ class TaurusPublisher
             $lifo,
             $token
         );
-        $redis->close();
+        $redis->disconnect();
         return $result;
     }
 
