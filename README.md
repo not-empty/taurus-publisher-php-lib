@@ -76,6 +76,37 @@ $result = $taurus->add(
 var_dump($result);
 ```
 
+Publishing in loop without exceed redis connections (reuse redis connections)
+
+you may pass a redis connection to persist connection and allow you to loop add method without overload redis with connections
+
+```php
+use TaurusPublisher\TaurusPublisher;
+use Predis\Client as Redis;
+$redisConfig = [
+    'scheme' => 'tcp',
+    'host'   => 'redis',
+    'port'   => 6379,
+];
+$client = new Redis($redisConfig);
+$queue = 'test';
+$data = [
+	'publisher' => 'example',
+];
+$taurus = new TaurusPublisher(
+    $redisConfig,
+    [],
+    $client
+);
+for ($i=0; $i < 1000000; $i++) { 
+    $result = $taurus->add(
+        $queue,
+        $data
+    );
+    var_dump($result);
+}
+```
+
 if you want an environment to run or test it, you can build and install dependences like this
 
 ```sh

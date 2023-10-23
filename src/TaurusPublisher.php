@@ -10,6 +10,7 @@ class TaurusPublisher
     private $prefix = 'bull';
     private $redisConfig;
     private $redisOptions;
+    private $redis;
 
     /**
      * construct class with redis config if pass
@@ -19,10 +20,12 @@ class TaurusPublisher
      */
     public function __construct(
         array $redisConfig = [],
-        array $redisOptions = []
+        array $redisOptions = [],
+        Redis $redis = null
     ) {
         $this->redisConfig = $this->redisConfig($redisConfig);
         $this->redisOptions = $redisOptions;
+        $this->redis = $redis;
     }
 
     /**
@@ -40,7 +43,7 @@ class TaurusPublisher
         array $opts = [],
         string $name = 'process'
     ): string {
-        $redis = $this->newRedis();
+        $redis = $this->getRedis();
 
         $redis
             ->getProfile()
@@ -85,7 +88,6 @@ class TaurusPublisher
             $lifo,
             $token
         );
-        $redis->disconnect();
         return $result;
     }
 
@@ -124,6 +126,21 @@ class TaurusPublisher
         ];
 
         return array_merge($defaultConfig, $redisConfig);
+    }
+
+    /**
+     * @codeCoverageIgnore
+     * create predis client instance
+     * @return \Predis\Client
+     */
+    public function getRedis(): Redis
+    {
+        if ($this->redis instanceof Redis) {
+            return $this->redis;
+        }
+
+        $this->redisConfig = $this->redisConfig($this->redisConfig);
+        return $this->newRedis();
     }
 
     /**

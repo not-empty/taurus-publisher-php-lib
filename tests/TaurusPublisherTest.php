@@ -12,9 +12,9 @@ class TaurusPublisherTest extends TestCase
      */
     public function testTaurusPublisherCanBeInstanciated()
     {
-        $TaurusPublisher = new TaurusPublisher();
+        $taurusPublisher = new TaurusPublisher();
 
-        $this->assertInstanceOf(TaurusPublisher::class, $TaurusPublisher);
+        $this->assertInstanceOf(TaurusPublisher::class, $taurusPublisher);
     }
 
     /**
@@ -43,8 +43,8 @@ class TaurusPublisherTest extends TestCase
             ->andReturn($ulid)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher
             ->shouldReceive('newUlid')
             ->withNoArgs()
             ->once()
@@ -54,7 +54,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($timestamp);
 
-        $configQueue = $TaurusPublisher->configQueue([]);
+        $configQueue = $taurusPublisher->configQueue([]);
 
         $this->assertEquals($result, $configQueue);
     }
@@ -90,8 +90,8 @@ class TaurusPublisherTest extends TestCase
             ->andReturn($ulid)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher
             ->shouldReceive('newUlid')
             ->withNoArgs()
             ->once()
@@ -101,7 +101,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($timestamp);
 
-        $configQueue = $TaurusPublisher->configQueue($params);
+        $configQueue = $taurusPublisher->configQueue($params);
 
         $this->assertEquals($result, $configQueue);
     }
@@ -119,9 +119,9 @@ class TaurusPublisherTest extends TestCase
             'port'   => 6379,
         ];
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
 
-        $redisConfig = $TaurusPublisher->redisConfig($redisConfig);
+        $redisConfig = $taurusPublisher->redisConfig($redisConfig);
 
         $this->assertEquals($result, $redisConfig);
     }
@@ -141,9 +141,9 @@ class TaurusPublisherTest extends TestCase
             'port'   => 6379,
         ];
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
 
-        $redisConfig = $TaurusPublisher->redisConfig($redisConfig);
+        $redisConfig = $taurusPublisher->redisConfig($redisConfig);
 
         $this->assertEquals($result, $redisConfig);
     }
@@ -226,13 +226,10 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('disconnect')
-            ->withNoArgs()
-            ->andReturn(true)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher->shouldReceive('newRedis')
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -245,7 +242,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($options);
 
-        $add = $TaurusPublisher->add($queue, $data, $opts, $name);
+        $add = $taurusPublisher->add($queue, $data, $opts, $name);
 
         $this->assertEquals('', $add);
     }
@@ -331,13 +328,10 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('disconnect')
-            ->withNoArgs()
-            ->andReturn(true)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher->shouldReceive('newRedis')
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -350,7 +344,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($options);
 
-        $add = $TaurusPublisher->add($queue, $data, $opts, $name);
+        $add = $taurusPublisher->add($queue, $data, $opts, $name);
 
         $this->assertEquals('', $add);
     }
@@ -436,13 +430,10 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('disconnect')
-            ->withNoArgs()
-            ->andReturn(true)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher->shouldReceive('newRedis')
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -455,7 +446,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($options);
 
-        $add = $TaurusPublisher->add($queue, $data, $opts, $name);
+        $add = $taurusPublisher->add($queue, $data, $opts, $name);
 
         $this->assertEquals('', $add);
     }
@@ -541,13 +532,10 @@ class TaurusPublisherTest extends TestCase
             )
             ->once()
             ->andReturn('')
-            ->shouldReceive('disconnect')
-            ->withNoArgs()
-            ->andReturn(true)
             ->getMock();
 
-        $TaurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
-        $TaurusPublisher->shouldReceive('newRedis')
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
             ->andReturn($redisMock)
@@ -560,7 +548,7 @@ class TaurusPublisherTest extends TestCase
             ->once()
             ->andReturn($options);
 
-        $add = $TaurusPublisher->add($queue, $data, $opts, $name);
+        $add = $taurusPublisher->add($queue, $data, $opts, $name);
 
         $this->assertEquals('', $add);
     }
