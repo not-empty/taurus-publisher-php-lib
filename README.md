@@ -1,10 +1,18 @@
 # PHP Taurus Queue Publisher
 
+[![Latest Version](https://img.shields.io/github/v/release/not-empty/taurus-publisher-php-lib.svg?style=flat-square)](https://github.com/not-empty/taurus-publisher-php-lib/releases)
+[![codecov](https://codecov.io/gh/not-empty/taurus-publisher-php-lib/graph/badge.svg?token=AEMV163UW6)](https://codecov.io/gh/not-empty/taurus-publisher-php-lib)
+[![CI Build](https://img.shields.io/github/actions/workflow/status/not-empty/taurus-publisher-php-lib/php.yml)](https://github.com/not-empty/taurus-publisher-php-lib/actions/workflows/php.yml)
+[![Downloads Old](https://img.shields.io/packagist/dt/kiwfy/ulid-php?logo=old&label=downloads%20legacy)](https://packagist.org/packages/kiwfy/ulid-php)
+[![Downloads](https://img.shields.io/packagist/dt/not-empty/taurus-publisher-php-lib?logo=old&label=downloads)](https://packagist.org/packages/not-empty/taurus-publisher-php-lib)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Packagist License (custom server)](https://img.shields.io/packagist/l/not-empty/taurus-publisher-php-lib)](https://github.com/not-empty/taurus-publisher-php-lib/blob/master/LICENSE)
 
 PHP library using LUA script to send for redis a job for Taurus queue
 
 ### Installation
+
+[Release 5.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/5.0.0) Requires [PHP](https://php.net) 8.2
 
 [Release 4.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/4.0.0) Requires [PHP](https://php.net) 8.1
 
@@ -116,12 +124,12 @@ for ($i=0; $i < 1000000; $i++) {
 if you want an environment to run or test it, you can build and install dependences like this
 
 ```sh
-docker build --build-arg PHP_VERSION=8.1.4-cli -t not-empty/taurus-publisher-php-lib:php81 -f contrib/Dockerfile .
+docker build --build-arg PHP_VERSION=8.2-cli -t not-empty/taurus-publisher-php-lib:php82 -f contrib/Dockerfile .
 ```
 
 Access the container
 ```sh
-docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php81 bash
+docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php82 bash
 ```
 
 Verify if all dependencies is installed
@@ -147,12 +155,12 @@ To ensure that the entire project is fine:
 First you need to building a correct environment to install all dependences
 
 ```sh
-docker build --build-arg PHP_VERSION=8.1.4-cli -t not-empty/taurus-publisher-php-lib:php81 -f contrib/Dockerfile .
+docker build --build-arg PHP_VERSION=8.2-cli -t not-empty/taurus-publisher-php-lib:php82 -f contrib/Dockerfile .
 ```
 
 Access the container
 ```sh
-docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php81 bash
+docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php82 bash
 ```
 
 Install all dependences
