@@ -6,7 +6,7 @@
     "license": "GPL-3.0-only",
     "require": {
         "php": "^7.1",
-        "predis/predis": "^1.1",
+        "predis/predis": "^1.1.10",
         "not-empty/ulid-php-lib" : "1.0.0"
     },
     "require-dev": {
