@@ -4,30 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fc8f947cb6713b0cbd3240ac3c18101",
+    "content-hash": "f33db765528f57c899beffda753b91aa",
     "packages": [
         {
             "name": "not-empty/ulid-php-lib",
-            "version": "4.0.0",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/not-empty/ulid-php-lib.git",
-                "reference": "7ac5ebc25eecce02e4bc6b9955585f1e61ff8019"
+                "reference": "0a3e5314211910f14a1a0fabc68b5001dcc6d07c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/not-empty/ulid-php-lib/zipball/7ac5ebc25eecce02e4bc6b9955585f1e61ff8019",
-                "reference": "7ac5ebc25eecce02e4bc6b9955585f1e61ff8019",
+                "url": "https://api.github.com/repos/not-empty/ulid-php-lib/zipball/0a3e5314211910f14a1a0fabc68b5001dcc6d07c",
+                "reference": "0a3e5314211910f14a1a0fabc68b5001dcc6d07c",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
-                "mockery/mockery": "^1.4.4",
-                "phpmd/phpmd": "^2.11",
-                "phpunit/phpunit": "^9.5.10",
-                "squizlabs/php_codesniffer": "^3.6"
+                "mockery/mockery": "^1.6",
+                "phpmd/phpmd": "^2.14",
+                "phpunit/phpunit": "^9.6",
+                "squizlabs/php_codesniffer": "^3.7"
             },
             "type": "library",
             "autoload": {
@@ -48,9 +48,9 @@
             "description": "PHP Universally Unique Lexicographically Sortable Identifier (ULID)",
             "support": {
                 "issues": "https://github.com/not-empty/ulid-php-lib/issues",
-                "source": "https://github.com/not-empty/ulid-php-lib/tree/4.0.0"
+                "source": "https://github.com/not-empty/ulid-php-lib/tree/6.0.0"
             },
-            "time": "2023-10-19T17:46:32+00:00"
+            "time": "2023-10-25T19:59:05+00:00"
         },
         {
             "name": "predis/predis",
