@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39afe29d12d802544ed0e7722c56c599",
+    "content-hash": "baa6389377d4d82283526c1b3af45b78",
     "packages": [
         {
             "name": "not-empty/ulid-php-lib",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/not-empty/ulid-php-lib.git",
-                "reference": "787d361084bfba8457f0c57242033181cce8399b"
+                "reference": "886e22f14fcba34f62d6fa2e5877a3a829c24331"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/not-empty/ulid-php-lib/zipball/787d361084bfba8457f0c57242033181cce8399b",
-                "reference": "787d361084bfba8457f0c57242033181cce8399b",
+                "url": "https://api.github.com/repos/not-empty/ulid-php-lib/zipball/886e22f14fcba34f62d6fa2e5877a3a829c24331",
+                "reference": "886e22f14fcba34f62d6fa2e5877a3a829c24331",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "PHP Universally Unique Lexicographically Sortable Identifier (ULID)",
             "support": {
                 "issues": "https://github.com/not-empty/ulid-php-lib/issues",
-                "source": "https://github.com/not-empty/ulid-php-lib/tree/3.0.0"
+                "source": "https://github.com/not-empty/ulid-php-lib/tree/4.0.0"
             },
-            "time": "2023-10-17T15:02:39+00:00"
+            "time": "2023-10-25T19:45:56+00:00"
         },
         {
             "name": "predis/predis",
