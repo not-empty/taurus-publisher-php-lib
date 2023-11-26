@@ -1,11 +1,11 @@
 {
     "name": "not-empty/taurus-publisher-php-lib",
     "description": "PHP library using LUA script to send for redis a job for Taurus queue",
-    "version": "6.0.0",
+    "version": "7.0.0",
     "type": "library",
     "license": "GPL-3.0-only",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "predis/predis": "^1.1.10",
         "not-empty/ulid-php-lib": "^7.0"
     },

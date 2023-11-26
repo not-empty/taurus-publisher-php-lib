@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43695c5f7bd8a8aedecb4b85d7a470da",
+    "content-hash": "1394d825aa6d7592468e44eed4faca82",
     "packages": [
         {
             "name": "not-empty/ulid-php-lib",
@@ -3046,7 +3046,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.3"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
